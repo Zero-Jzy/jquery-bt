@@ -1,4 +1,3 @@
-var MY_API = 'https://2-dot-backup-server-002.appspot.com/_api/v2/songs/detail';
 var currentSong;
 document.addEventListener('DOMContentLoaded', function () {
     var url = new URL(window.location.href);
@@ -30,7 +29,7 @@ function loadSong(id) {
             updateDetail(song);
         }
     }
-    xmlHttpRequest.open('GET', MY_API + '?id=' + id, true);
+    xmlHttpRequest.open('GET', SONG_DETAIL_API + '?id=' + id, true);
     xmlHttpRequest.send();
 }
 

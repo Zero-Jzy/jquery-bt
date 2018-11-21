@@ -1,4 +1,3 @@
-var MY_API = 'https://2-dot-backup-server-002.appspot.com/_api/v2/songs/get-free-songs';
 document.addEventListener('DOMContentLoaded', function () {
     loadSongs();
 });
@@ -26,7 +25,7 @@ function loadSongs() {
             document.getElementById('list-song').innerHTML = content;
         }
     }
-    xmlHttpRequest.open('GET', MY_API, true);
+    xmlHttpRequest.open('GET', LIST_SONG_API, true);
     xmlHttpRequest.send();
 }
 
@@ -34,5 +33,4 @@ function playSong(link, name, singer) {
     document.getElementById('my-mp3').src = link;
     document.getElementById('current-play-title').innerHTML = 'Current playing: ' + name + " - " + singer;
 }
-
 

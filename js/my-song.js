@@ -1,4 +1,3 @@
-var MY_API = 'https://2-dot-backup-server-002.appspot.com/_api/v2/songs/get-mine';
 document.addEventListener('DOMContentLoaded', function () {
     loadSongs();
 });
@@ -24,9 +23,12 @@ function loadSongs() {
                 content += '</div>';
             }
             document.getElementById('list-song').innerHTML = content;
+        } else if (this.readyState == 4 && (this.status == 401 || this.status == 403)) {
+            alert('This page required logged in to continue!')
+            window.location.href = "login.html";
         }
     }
-    xmlHttpRequest.open('GET', MY_API, true);
+    xmlHttpRequest.open('GET', MY_SONG_API, true);
     xmlHttpRequest.setRequestHeader('Authorization', 'Basic ' + localStorage.getItem('token-key'));
     xmlHttpRequest.send();
 }
