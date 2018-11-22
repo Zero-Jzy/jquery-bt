@@ -35,8 +35,9 @@
 // }
 
 function playSong(link, name, singer) {
-    document.getElementById('my-mp3').src = link;
-    document.getElementById('current-play-title').innerHTML = 'Current playing: ' + name + " - " + singer;
+    // document.getElementById('my-mp3').src = link;
+    $('#my-mp3').attr('src',link);
+    $('#current-play-title').html('Current playing: ' + name + ' - ' + singer);
 }
 $(document).ready(function(){
 
@@ -49,7 +50,7 @@ $(document).ready(function(){
                 var listSong = data;
             var content = '';
             for (var i = 0; i < listSong.length; i++) {
-                content += '<div class="song-item row border rounded p-2 m-4 shadow-sm">';
+                content += '<div class="song-item row border rounded p-2 m-2 shadow-sm">';
                 content += '<div class="d-flex align-items-center h3 col-1">' + (i + 1) + '</div>';
                 content += '<div class="song-thumbnail col-2">';
                 content += '<img class="w-100" src="' + listSong[i].thumbnail + '" alt="">';
@@ -62,7 +63,7 @@ $(document).ready(function(){
                 content += '<div class="song-control d-flex align-items-center col-2"><a href="song-detail.html?id=' + listSong[i].id + '">Detail</a></div>';
                 content += '</div>';
             }
-            document.getElementById('list-song').innerHTML = content;
+            $('#list-song').html(content);
             },
             error: function (jqXHR) {
                 alert(data.token);
