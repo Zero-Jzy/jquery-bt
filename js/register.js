@@ -14,6 +14,10 @@ var validater = $('#register-form').validate({
             required: true,
             email: true
         },
+        avatar: {
+            required: true,
+            email: true
+        },
         password: {
             required: true,
             minlength: 2,
@@ -37,6 +41,9 @@ var validater = $('#register-form').validate({
         email: {
             required: 'Vui lòng email của bạn.',
             email: 'Vui lòng nhập email đúng định dạng'
+        },
+        avatar: {
+            required: 'Vui lòng avatar của bạn.',
         },
         password: {
             required: 'Vui lòng nhập password.',
@@ -72,7 +79,7 @@ var validater = $('#register-form').validate({
                 console.log(textStatus);
                 console.log('-----');
                 console.log(jqXHR);
-                alert(1);
+                alert("đăng kí thành c");
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 if (Object.keys(jqXHR.responseJSON.error).length > 0) {
