@@ -55,11 +55,11 @@ $(document).ready(function(){
                 content += '<div class="song-thumbnail col-2">';
                 content += '<img class="w-100" src="' + listSong[i].thumbnail + '" alt="">';
                 content += '</div>';
-                content += '<div class="song-infor  col-4">';
+                content += '<div class="song-infor  col-5">';
                 content += '<div class="song-name">' + listSong[i].name + '</div>';
                 content += '<div class="song-singer">' + listSong[i].singer + '</div>';
                 content += '</div>';
-                content += '<div class="song-control d-flex align-items-center col-3" onclick="playSong(\'' + listSong[i].link + '\', \'' + listSong[i].name + '\', \'' + listSong[i].singer + '\')"><button class="btn btn-outline-dark rounded-circle"><i class="fa fa-play" aria-hidden="true"></i></button></div>';
+                content += '<div class="song-control d-flex align-items-center col-2" onclick="playSong(\'' + listSong[i].link + '\', \'' + listSong[i].name + '\', \'' + listSong[i].singer + '\')"><button class="btn btn-outline-dark rounded-circle"><i class="fa fa-play" aria-hidden="true"></i></button></div>';
                 content += '<div class="song-control d-flex align-items-center col-2"><a href="song-detail.html?id=' + listSong[i].id + '">Detail</a></div>';
                 content += '</div>';
             }
